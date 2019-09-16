@@ -23,7 +23,7 @@ C:/xampp/htdocs/testsite\admin\attributes_controller.php
 
 ## Installation
 
-Installation is simple (there's only one file).  Simply copy `notifier_report.php` to your site's admin directory (where the `admin_account.php` and `admin_activity.php` files reside.  Admin superusers _only_ will be able to access the script, entering a link similar to `www.example.com/myadmin/notifier_report.php` in the browser's address.  The script will take a while (depending on how many files are in that directory) and will print a message to the screen once complete:
+Installation is simple (there's only one file).  Simply copy `notifier_report.php` to your site's admin directory (where the `admin_account.php` and `admin_activity.php` files reside).  Admin _superusers only_ will be able to access the script, entering a link similar to `www.example.com/myadmin/notifier_report.php` in the browser's address.  The script will take a while (depending on how many files are in that directory-tree) and will print a message to the screen once complete:
 ```
 Report created: C:/xampp/htdocs/testsite/logs/notifier_report_20190916_135949.txt.
 ```
