@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Zen Cart Notifier Report</title>
 </head>
 <body>
 <h1 id="zencartnotifierreport">Zen Cart Notifier Report</h1>
-<h3>Version 1.0.0, by lat9</h3>
-<h4>Copyright, 2019.  <a href="https://vinosdefrutastropicales.com" target="_blank">Vinos de Frutas Tropicales</a></h4>
+<h3>Version 1.1.0, by lat9</h3>
+<h4>Copyright, 2019-2020.  <a href="https://vinosdefrutastropicales.com" target="_blank">Vinos de Frutas Tropicales</a></h4>
 <h4>Zen Cart Support Thread: <a href="https://www.zen-cart.com/showthread.php?225903-Zen-Cart-Notifier-Report-Support-Thread&p=1361711#post1361711" target="_blank">https://www.zen-cart.com/showthread.php?225903-Zen-Cart-Notifier-Report-Support-Thread&p=1361711#post1361711</a></h4>
 
 <p>As more and more plugins are relying on Zen Cart notifiers to perform their customizations, it can be a developer's debug nightmare if an expected notification isn't present.  It's kind of like you're waiting for something to do, but no one's there to say "Go do it".</p>
@@ -17,17 +17,17 @@
 
 <p>Here's a sample of the output:</p>
 
-<pre><code>Start notifier report (v1.0.0), created 2019-09-16 13:54:54
+<pre><code>Start notifier report (v1.1.0), created 2020-04-16 13:54:54
 
-C:/xampp/htdocs/testsite\admin\admin_activity.php
-        line#293: $zco_notifier-&gt;notify('NOTIFY_ADMIN_ACTIVITY_LOG_RESET');
+admin/admin_activity.php
+        line#293: 'NOTIFY_ADMIN_ACTIVITY_LOG_RESET'
 
-C:/xampp/htdocs/testsite\admin\attributes_controller.php
-        line#421: $zco_notifier-&gt;notify('NOTIFY_ATTRIBUTE_CONTROLLER_ADD_PRODUCT_ATTRIBUTES', $products_attributes_id);
-        line#565: $zco_notifier-&gt;notify('NOTIFY_ATTRIBUTE_CONTROLLER_UPDATE_PRODUCT_ATTRIBUTE', $attribute_id);
-        line#584: $zco_notifier-&gt;notify('NOTIFY_ATTRIBUTE_CONTROLLER_DELETE_ATTRIBUTE', array('attribute_id' =&gt; $attribute_id), $attribute_id);
-        line#601: $zco_notifier-&gt;notify('NOTIFY_ATTRIBUTE_CONTROLLER_DELETE_ALL', array('pID' =&gt; $_POST['products_filter']));
-        line#615: $zco_notifier-&gt;notify('NOTIFY_ATTRIBUTE_CONTROLLER_DELETE_OPTION_NAME_VALUES', array('pID' =&gt; $_POST['products_filter'], 'options_id' =&gt; $_POST['products_options_id_all']));
+admin/attributes_controller.php
+        line#421: 'NOTIFY_ATTRIBUTE_CONTROLLER_ADD_PRODUCT_ATTRIBUTES', $products_attributes_id
+        line#565: 'NOTIFY_ATTRIBUTE_CONTROLLER_UPDATE_PRODUCT_ATTRIBUTE', $attribute_id
+        line#584: 'NOTIFY_ATTRIBUTE_CONTROLLER_DELETE_ATTRIBUTE', array('attribute_id' =&gt; $attribute_id), $attribute_id
+        line#601: 'NOTIFY_ATTRIBUTE_CONTROLLER_DELETE_ALL', array('pID' =&gt; $_POST['products_filter'])
+        line#615: 'NOTIFY_ATTRIBUTE_CONTROLLER_DELETE_OPTION_NAME_VALUES', array('pID' =&gt; $_POST['products_filter'], 'options_id' =&gt; $_POST['products_options_id_all'])
 </code></pre>
 
 <p><strong>Note</strong>: This is a <em>developer tool</em>, not a "proper" plugin.  There's no language file, no means (although it's open source) to create an entry in the admin's menu.</p>
@@ -39,8 +39,13 @@ C:/xampp/htdocs/testsite\admin\attributes_controller.php
 <pre><code>Report created: C:/xampp/htdocs/testsite/logs/notifier_report_20190916_135949.txt.
 </code></pre>
 
+<p>To create a report in <em>markdown</em> format, simply add a 'markdown' variable to that link, e.g. <code>www.example.com/myadmin/notifier_report.php?markdown</code>.  That will produce a markdown-formatted file suitable for inclusion in the Zen Cart <a href="https://github.com/zencart/documentation" target="_blank">documentation</a>.</p>
+
 <h2>Change History</h2>
 <ul>
+    <li>v1.1.0, 20200416:<ol>
+        <li>CHANGE: Enable a <em>markdown</em>-formatted output.  Also removes superfluous information from the report.</li>
+    </ol></li>
     <li>v1.0.0, 20190916: Initial release.</li>
 </ul>
 </body>
